@@ -254,6 +254,10 @@ myLogHook = return ()
 myStartupHook = do
                 spawnOnce "compton &"
                 spawnOnce "nitrogen --restore &"
+                spawnOnce "trayer --width 3 --edge top --align right --height 16 --transparent true --tint 0x000000 --alpha 115 &"
+                spawnOnce "volumeicon &"
+                spawnOnce "nm-applet &"
+                spawnOnce "redshift-gtk &"
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
 

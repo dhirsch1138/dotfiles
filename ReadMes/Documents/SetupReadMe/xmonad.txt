@@ -1,0 +1,14 @@
+Install
+=========
+xmonad
+libghc-xmonad-contrib-dev (xmonad-contrib in arch)
+dmenu
+xterm
+compton
+nitrogen
+xmobar
+xfce4-terminal
+stalonetray
+volumeicon
+nm-applet
+redshift-gtk
