@@ -19,7 +19,7 @@ import qualified Data.Map        as M
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.Run
 import XMonad.Util.SpawnOnce
-
+import XMonad.Hooks.DynamicLog
 
 
 -- The preferred terminal program, which is used in a binding below and by
@@ -128,7 +128,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Use this binding with avoidStruts from Hooks.ManageDocks.
     -- See also the statusBar function from Hooks.DynamicLog.
     --
-    -- , ((modm              , xK_b     ), sendMessage ToggleStruts)
+    , ((modm              , xK_b     ), sendMessage ToggleStruts)
 
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
@@ -190,18 +190,18 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- which denotes layout choice.
 --
 myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full)
-  where
+             where
      -- default tiling algorithm partitions the screen into two panes
-     tiled   = Tall nmaster delta ratio
+               tiled   = Tall nmaster delta ratio
 
      -- The default number of windows in the master pane
-     nmaster = 1
+               nmaster = 1
 
      -- Default proportion of screen occupied by master pane
-     ratio   = 1/2
+               ratio   = 1/2
 
      -- Percent of screen to increment by when resizing panes
-     delta   = 3/100
+               delta   = 3/100
 
 ------------------------------------------------------------------------
 -- Window rules:
@@ -218,12 +218,13 @@ myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full)
 -- To match on the WM_NAME, you can use 'title' in the same way that
 -- 'className' and 'resource' are used below.
 --
-myManageHook = composeAll
-    [ className =? "MPlayer"        --> doFloat
-    , className =? "Gimp"           --> doFloat
-    , resource  =? "desktop_window" --> doIgnore
-    , resource  =? "kdesktop"       --> doIgnore ]
-
+myManageHook = do
+    composeAll
+     [ className =? "MPlayer"        --> doFloat
+     , className =? "Gimp"           --> doFloat
+     , resource  =? "desktop_window" --> doIgnore
+     , resource  =? "kdesktop"       --> doIgnore ]
+    manageDocks <+> manageHook def
 ------------------------------------------------------------------------
 -- Event handling
 
@@ -266,7 +267,28 @@ myStartupHook = do
 main = do
 -- launch xmobar on monitor 0
        xmproc <- spawnPipe "xmobar -x 0 $HOME/.config/xmobar/xmobar.config"
-       xmonad $ docks defaults
+       xmonad $ docks def {
+      -- simple stuff
+        terminal           = myTerminal,
+        focusFollowsMouse  = myFocusFollowsMouse,
+        clickJustFocuses   = myClickJustFocuses,
+        borderWidth        = myBorderWidth,
+        modMask            = myModMask,
+        workspaces         = myWorkspaces,
+        normalBorderColor  = myNormalBorderColor,
+        focusedBorderColor = myFocusedBorderColor,
+
+      -- key bindings
+        keys               = myKeys,
+        mouseBindings      = myMouseBindings,
+
+      -- hooks, layouts
+        layoutHook         = myLayout,
+        manageHook         = myManageHook,
+        handleEventHook    = myEventHook,
+        logHook            = dynamicLogWithPP $ def { ppOutput = hPutStrLn xmproc },
+        startupHook        = myStartupHook
+    }
 
 -- A structure containing your configuration settings, overriding
 -- fields in the default config. Any you don't override, will
