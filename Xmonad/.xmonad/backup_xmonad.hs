@@ -265,7 +265,7 @@ myStartupHook = do
 --
 main = do
 -- launch xmobar on monitor 0
-       xmproc <- spawnPipe "xmobar -x 0 $HOME/.config/xmobar/xmobar.config"
+       xmproc <- spawnPipe "xmobar -x 0 /home/david/.config/xmobar/xmobar.config"
        xmonad $ docks defaults
 
 -- A structure containing your configuration settings, overriding
