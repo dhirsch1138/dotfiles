@@ -255,8 +255,8 @@ myLogHook = return ()
 myStartupHook = do
                 spawnOnce "compton &"
                 spawnOnce "nitrogen --restore &"
-                spawnOnce "trayer --width 3 --edge top --align right --height 16 --transparent true --tint 0x000000 --alpha 115 &"
-                spawnOnce "volumeicon &"
+                spawnOnce "trayer --width 5 --edge top --align right --height 16 --transparent true --tint 0x000000 --alpha 0 &"
+                spawnOnce "pnmixer &"
                 spawnOnce "nm-applet &"
                 spawnOnce "redshift-gtk &"
 ------------------------------------------------------------------------
