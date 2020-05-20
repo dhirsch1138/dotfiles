@@ -9,6 +9,5 @@ nitrogen
 xmobar
 xfce4-terminal
 stalonetray
-pnmixer
 nm-applet
 redshift-gtk

@@ -126,6 +126,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- Toggle the status bar gap
     -- Use this binding with avoidStruts from Hooks.ManageDocks.
+
     -- See also the statusBar function from Hooks.DynamicLog.
     --
     , ((modm              , xK_b     ), sendMessage ToggleStruts)
@@ -135,6 +136,16 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- Restart xmonad
     , ((modm              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
+
+    -- mute button
+    , ((0                 , 0x1008FF12), spawn "$HOME/.config/xmobar/pulse-volume.sh toggle")
+
+    -- volumeup button
+    , ((0                 , 0x1008FF13), spawn "$HOME/.config/xmobar/pulse-volume.sh increase")
+
+    -- volumedown button
+    , ((0                 , 0x1008FF11), spawn "$HOME/.config/xmobar/pulse-volume.sh decrease")
+
 
     -- Run xmessage with a summary of the default keybindings (useful for beginners)
     , ((modm .|. shiftMask, xK_slash ), spawn ("echo \"" ++ help ++ "\" | xmessage -file -"))
@@ -256,9 +267,9 @@ myStartupHook = do
                 spawnOnce "compton &"
                 spawnOnce "nitrogen --restore &"
                 spawnOnce "trayer --width 5 --edge top --align right --height 16 --transparent true --tint 0x000000 --alpha 0 &"
-                spawnOnce "pnmixer &"
                 spawnOnce "nm-applet &"
                 spawnOnce "redshift-gtk &"
+                spawnOnce "$HOME/.config/xmobar/pulse-volume.sh reset &"
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
 
