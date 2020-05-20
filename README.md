@@ -19,4 +19,7 @@ Once cloned:
 5. Install the gnu stow utility
 6. In the directory you cloned into, type "stow *" to create symlinks for all of the
    config files and documentation.
-   READ THE STOW MAN PAGE TO UNDERSTAND WHAT IT DOES AND HOW IT WORKS. 
+   READ THE STOW MAN PAGE TO UNDERSTAND WHAT IT DOES AND HOW IT WORKS.
+
+Once in new WM
+1. use nitrogen to set background 
