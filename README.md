@@ -5,7 +5,10 @@ Contains my personal setup for:
 * i3 using i3bar
 * xmonad using xmobar
 
-This repo is meant to be cloned into something like a ~/.dotfiles directory.
+This repo is meant to be cloned into a ~/.dotfiles directory (alterations to directory will require changes to paths)
+
+Example how to clone (from your home directory):
+git clone https://github.com/dhirsch1138/dotfiles .dotfiles
 
 Once cloned:
 1. Look at the ReadMes/Documents/SetupReadMe directory
@@ -16,6 +19,8 @@ Once cloned:
 4. XMONAD ONLY - edit xmobar/.config/xmobar.hs
               find the line that starts with ", Run Com "python" ["/home/david"
               replace "david" with your username
+              and other spawnOnce command may have user specific directories that
+              need to be changed
 5. Install the gnu stow utility
 6. In the directory you cloned into, type "stow *" to create symlinks for all of the
    config files and documentation.
