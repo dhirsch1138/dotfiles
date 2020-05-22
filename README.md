@@ -1,6 +1,8 @@
 # dotfiles
 dotfiles for my linux install
 
+[screenshot](screenshot.png)
+
 Contains my personal setup for:
 * i3 using i3bar
 * xmonad using xmobar
