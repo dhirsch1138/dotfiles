@@ -8,6 +8,6 @@ compton
 nitrogen
 xmobar
 xfce4-terminal
-stalonetray
+trayer
 nm-applet
 redshift-gtk

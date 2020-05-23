@@ -24,6 +24,7 @@ Once cloned:
               and other spawnOnce command may have user specific directories that
               need to be changed
 5. Install the gnu stow utility
+5.5 You will probably need to delete the README.md and screenshot.png files
 6. In the directory you cloned into, type "stow *" to create symlinks for all of the
    config files and documentation.
    READ THE STOW MAN PAGE TO UNDERSTAND WHAT IT DOES AND HOW IT WORKS.
