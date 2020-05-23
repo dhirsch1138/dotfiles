@@ -269,7 +269,7 @@ myStartupHook = do
                 spawnOnce "trayer --width 4 --edge top --align right --height 16 --transparent true --tint 0x000000 --alpha 0 &"
                 spawnOnce "nm-applet &"
                 spawnOnce "redshift-gtk &"
-                spawnOnce "$HOME/.config/xmobar/pulse-volume.sh reset &"
+                spawnOnce "xfce4-power-manager &"
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
 

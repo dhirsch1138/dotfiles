@@ -1,0 +1,6 @@
+From a clean debian busty stable install (Recommended, select the xfce desktop).
+1. install vim
+2. Enable contrib & non-free pipelines in /etc/apt/sources.list
+3. apt update
+4. apt install firmware-linux-nonfree firmware-b43-installer    (to get amd gpu drivers and wifi drivers)
+5. apt install tlp (to install laptop power tweaker)

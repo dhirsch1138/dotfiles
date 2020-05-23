@@ -8,6 +8,7 @@ compton
 nitrogen
 xmobar
 xfce4-terminal
+xfce4-power-manager
 trayer
 nm-applet
 redshift-gtk
