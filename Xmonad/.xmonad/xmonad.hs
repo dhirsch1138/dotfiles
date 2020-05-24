@@ -137,15 +137,6 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Restart xmonad
     , ((modm              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
 
-    -- mute button
-    , ((0                 , 0x1008FF12), spawn "$HOME/.config/xmobar/pulse-volume.sh toggle")
-
-    -- volumeup button
-    , ((0                 , 0x1008FF13), spawn "$HOME/.config/xmobar/pulse-volume.sh increase")
-
-    -- volumedown button
-    , ((0                 , 0x1008FF11), spawn "$HOME/.config/xmobar/pulse-volume.sh decrease")
-
 
     -- Run xmessage with a summary of the default keybindings (useful for beginners)
     , ((modm .|. shiftMask, xK_slash ), spawn ("echo \"" ++ help ++ "\" | xmessage -file -"))
@@ -270,6 +261,7 @@ myStartupHook = do
                 spawnOnce "nm-applet &"
                 spawnOnce "redshift-gtk &"
                 spawnOnce "xfce4-power-manager &"
+                spawnOnce "pnmixer &"
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
 
