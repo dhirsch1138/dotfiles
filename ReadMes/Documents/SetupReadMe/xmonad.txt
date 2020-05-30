@@ -11,5 +11,5 @@ xfce4-terminal
 xfce4-power-manager
 pnmixer
 trayer
-nm-applet
+nm-applet (not in apt, comes from xfce)
 redshift-gtk

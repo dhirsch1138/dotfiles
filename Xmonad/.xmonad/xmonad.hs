@@ -60,7 +60,7 @@ myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 -- Border colors for unfocused and focused windows, respectively.
 --
 myNormalBorderColor  = "#dddddd"
-myFocusedBorderColor = "#ff0000"
+myFocusedBorderColor = "#40004d"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -257,7 +257,7 @@ myLogHook = return ()
 myStartupHook = do
                 spawnOnce "compton &"
                 spawnOnce "nitrogen --restore &"
-                spawnOnce "trayer --width 4 --edge top --align right --height 16 --transparent true --tint 0x000000 --alpha 0 &"
+                spawnOnce "trayer --width 4 --edge top --align right --height 16 --transparent true --tint 0x40004d --alpha 0 &"
                 spawnOnce "nm-applet &"
                 spawnOnce "redshift-gtk &"
                 spawnOnce "xfce4-power-manager &"

@@ -1,4 +1,3 @@
-# dotfiles
 dotfiles for my linux install
 
 Contains my personal setup for:
@@ -29,3 +28,4 @@ Once cloned:
 
 Once in new WM
 1. use nitrogen to set background 
+
