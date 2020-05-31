@@ -1,0 +1,3 @@
+Install instructions & source notes: https://wiki.debian.org/Dwm
+
+More useful stuff: https://wiki.archlinux.org/index.php/Dwm
