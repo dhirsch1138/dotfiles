@@ -5,10 +5,10 @@ static const char *fonts[] = {
 	"monospace:size=10"
 };
 static const char dmenufont[]       = "monospace:size=10";
-static const char normbordercolor[] = "#444444";
+static const char normbordercolor[] = "#40004d";
 static const char normbgcolor[]     = "#40004d";
 static const char normfgcolor[]     = "#dddddd";
-static const char selbordercolor[]  = "#40004d";
+static const char selbordercolor[]  = "#ff69b4";
 static const char selbgcolor[]      = "#222222";
 static const char selfgcolor[]      = "#bbbbbb";
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
@@ -19,6 +19,16 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+
+static const char *autostart[][2] = { /* please replace 2 with maximum number of arguments from autostart array */
+	{ "compton", NULL },
+	{ "nitrogen --restore", NULL },
+	{ "nm-applet", NULL },
+	{ "redshift-gtk", NULL },
+	{ "xfce4-power-manager", NULL },
+	{ "pnmixer", NULL },
+	{ "~/.dwm/./status.sh", NULL }
+};
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
