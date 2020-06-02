@@ -1,0 +1,36 @@
+4c4
+< static const unsigned int borderpx  = 1;        /* border pixel of windows */
+---
+> static const unsigned int borderpx  = 2;        /* border pixel of windows */
+18a19,20
+> static const char col_purple[]      = "#40004d";
+> static const char col_hotpink[]      = "#ff69b4";
+21,22c23,24
+< 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
+< 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+---
+> 	[SchemeNorm] = { col_gray3, col_purple, col_purple },
+> 	[SchemeSel]  = { col_gray4, col_cyan,  col_hotpink },
+25,26c27,33
+< static char* const autostart[][2] = { /* please replace 2 with maximum number of arguments from autostart array */
+<     { "st", NULL },
+---
+> static char* const autostart[][4] = { /* please replace 2 with maximum number of arguments from autostart array */
+>     { "pnmixer", NULL },
+>     { "compton", NULL },
+>     { "nitrogen", "--restore", NULL },
+>     { "nm-applet", NULL },
+>     { "redshift-gtk", NULL },
+>     { "sh", "-c", "while :; do $HOME/.dwm/dwmstatus.sh -; sleep 30; done", NULL },
+39c46
+< 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+---
+> 	/* { "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 }, */
+55c62
+< #define MODKEY Mod1Mask
+---
+> #define MODKEY Mod4Mask
+68c75
+< static const char *termcmd[]  = { "st", NULL };
+---
+> static const char *termcmd[]  = { "x-terminal-emulator", NULL };
