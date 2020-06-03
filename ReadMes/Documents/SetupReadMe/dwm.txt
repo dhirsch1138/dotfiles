@@ -4,7 +4,7 @@ More useful stuff: https://wiki.archlinux.org/index.php/Dwm
 
 Compile dwm
 ====
-1) cd into the dwm source directory (currently ~/.config/dwm/dwm-6.1)
+1) cd into the dwm source directory (currently ~/.config/dwm/dwm-6.2)
 2) run "make install clean"
 3) Control+Shift+Q to logout and re-login
 
@@ -16,3 +16,14 @@ xfce4-power-manager
 pnmixer
 nm-applet
 redshift-gtk
+
+
+Current version 6.2
+===
+Patch install order
+* sys tray
+* cool autostart
+* limit tags
+
+To apply patches (put patches in source folder)
+patch -p1 < patchname.diff
