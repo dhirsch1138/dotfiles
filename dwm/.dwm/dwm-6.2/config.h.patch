@@ -1,7 +1,7 @@
 4c4
 < static const unsigned int borderpx  = 1;        /* border pixel of windows */
 ---
-> static const unsigned int borderpx  = 2;        /* border pixel of windows */
+> static const unsigned int borderpx  = 3;        /* border pixel of windows */
 18a19,20
 > static const char col_purple[]      = "#40004d";
 > static const char col_hotpink[]      = "#ff69b4";
@@ -26,6 +26,12 @@
 < 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 ---
 > 	/* { "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 }, */
+49,50c56,57
+< 	{ "[]=",      tile },    /* first entry is default */
+< 	{ "><>",      NULL },    /* no layout function means floating behavior */
+---
+> 	{ "↹",      tile },    /* first entry is default */
+> 	{ "🐟",      NULL },    /* no layout function means floating behavior */
 55c62
 < #define MODKEY Mod1Mask
 ---
