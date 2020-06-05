@@ -24,6 +24,7 @@ Patch install order
 * sys tray
 * cool autostart
 * limit tags
+* no border on fullscreen
 
 To apply patches (put patches in source folder)
 patch -p1 < patchname.diff
