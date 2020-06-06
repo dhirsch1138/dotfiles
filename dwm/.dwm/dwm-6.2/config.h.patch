@@ -2,6 +2,10 @@
 < static const unsigned int borderpx  = 1;        /* border pixel of windows */
 ---
 > static const unsigned int borderpx  = 3;        /* border pixel of windows */
+12c12
+< static const char *fonts[]          = { "monospace:size=10" };
+---
+> static const char *fonts[]          = { "Noto Sans Mono:size=10" };
 18a19,20
 > static const char col_purple[]      = "#40004d";
 > static const char col_hotpink[]      = "#ff69b4";
@@ -36,7 +40,7 @@
 < #define MODKEY Mod1Mask
 ---
 > #define MODKEY Mod4Mask
-68c75
-< static const char *termcmd[]  = { "st", NULL };
+67c74
+< static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 ---
-> static const char *termcmd[]  = { "x-terminal-emulator", NULL };
+> static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_purple, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
