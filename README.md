@@ -3,6 +3,7 @@ dotfiles for my linux install
 Contains my personal setup for:
 * i3 using i3bar
 * xmonad using xmobar
+* dwm using native status bar (& st)
 
 This repo is meant to be cloned into a ~/.dotfiles directory (alterations to directory will require changes to paths)
 
@@ -11,7 +12,7 @@ git clone https://github.com/dhirsch1138/dotfiles .dotfiles
 
 Once cloned:
 1. Look at the ReadMes/Documents/SetupReadMe directory
-2. identify the text file for the wm you wish to use (i3 or xmonad)
+2. identify the text file for the wm you wish to use
 3. Look at the text file and install whatever packages it has listed
    (feel free to omit/change, just know that these config files call these programs.
     They'll need to be updated).

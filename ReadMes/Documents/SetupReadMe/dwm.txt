@@ -2,10 +2,22 @@ Install instructions & source notes: https://wiki.debian.org/Dwm
 
 More useful stuff: https://wiki.archlinux.org/index.php/Dwm
 
+Install dwm
+===========
+We will be getting the source and building it ourselves, but this gets it on the lightdm menu.
+1) apt install dwm suckless-tools
+2) apt install dpkg-dev
+
 Compile dwm
 ====
-1) cd into the dwm source directory (currently ~/.config/dwm/dwm-6.2)
-2) run "make install clean"
+1) cd into the dwm source directory (currently ~/.dwm/dwm-6.2)
+2) run "make install clean" as root
+3) Control+Shift+Q to logout and re-login
+
+Compile st
+====
+1) cd into the st source directory (currenly ~/.dwm/st-0.8.3)
+2) run "make install clean" as root
 3) Control+Shift+Q to logout and re-login
 
 additional installs:
@@ -18,13 +30,18 @@ nm-applet
 redshift-gtk
 
 
-Current version 6.2
+DWM patching info
 ===
 Patch install order
 * sys tray
 * cool autostart
 * limit tags
 * no border on fullscreen
+
+ST patching info
+====
+Patch install order
+* st-scrollback (requires manual conflict resolution)
 
 To apply patches (put patches in source folder)
 patch -p1 < patchname.diff
