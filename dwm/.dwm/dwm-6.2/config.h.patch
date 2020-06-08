@@ -2,20 +2,20 @@
 < static const unsigned int borderpx  = 1;        /* border pixel of windows */
 ---
 > static const unsigned int borderpx  = 3;        /* border pixel of windows */
-12c12
+13c13
 < static const char *fonts[]          = { "monospace:size=10" };
 ---
 > static const char *fonts[]          = { "Noto Sans Mono:size=10" };
-18a19,20
+19a20,21
 > static const char col_purple[]      = "#40004d";
 > static const char col_hotpink[]      = "#ff69b4";
-21,22c23,24
+22,23c24,25
 < 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
 < 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 ---
 > 	[SchemeNorm] = { col_gray3, col_purple, col_purple },
 > 	[SchemeSel]  = { col_gray4, col_cyan,  col_hotpink },
-25,26c27,33
+26,27c28,34
 < static char* const autostart[][2] = { /* please replace 2 with maximum number of arguments from autostart array */
 <     { "st", NULL },
 ---
@@ -26,21 +26,21 @@
 >     { "nm-applet", NULL },
 >     { "redshift-gtk", NULL },
 >     { "sh", "-c", "while :; do $HOME/.dwm/dwmstatus.sh -; sleep 30; done", NULL },
-39c46
-< 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+40c47
+< 	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
 ---
-> 	/* { "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 }, */
-49,50c56,57
+> 	{ "Firefox", NULL,     NULL,           0,         0,          0,          -1,        -1 },
+52,53c59,60
 < 	{ "[]=",      tile },    /* first entry is default */
 < 	{ "><>",      NULL },    /* no layout function means floating behavior */
 ---
 > 	{ "↹",      tile },    /* first entry is default */
 > 	{ "🐟",      NULL },    /* no layout function means floating behavior */
-55c62
+58c65
 < #define MODKEY Mod1Mask
 ---
 > #define MODKEY Mod4Mask
-67c74
+70c77
 < static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 ---
 > static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_purple, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };

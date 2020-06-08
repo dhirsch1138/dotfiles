@@ -32,11 +32,16 @@ redshift-gtk
 
 DWM patching info
 ===
+Install dependencies
+* libx11-xcb-dev (for Xlib-xcb.h, required by swallow)
+* libxcb-res0-dev (for res.h, required by swallow)
+
 Patch install order
 * sys tray
 * cool autostart
 * limit tags
 * no border on fullscreen
+* swallow (requires manual conflict resolution)
 
 ST patching info
 ====
