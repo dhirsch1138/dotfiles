@@ -2,7 +2,7 @@ Install instructions & source notes: https://wiki.debian.org/Dwm
 
 More useful stuff: https://wiki.archlinux.org/index.php/Dwm
 
-Install dwm
+Install dwm (if installing, else use source from github or from dwm site)
 ===========
 We will be getting the source and building it ourselves, but this gets it on the lightdm menu.
 1) apt install dwm suckless-tools
@@ -20,6 +20,24 @@ Compile st
 2) run "make install clean" as root
 3) Control+Shift+Q to logout and re-login
 
+Add to lightdm
+====
+If you compiled and installed dwm from source keeping the defaults, its executable has to be in /usr/local/bin/.
+
+In this case you have to create a new .desktop file in /usr/share/xsessions/ using the command
+
+create this file as root /usr/share/xsessions/dwm.desktop
+
+and paste the following content in it:
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=dwm
+Comment=dwm window manager
+Exec=/usr/local/bin/dwm
+Type=Application
+
+
 additional installs:
 =====
 compton
@@ -30,7 +48,7 @@ nm-applet
 redshift-gtk
 
 
-DWM patching info
+DWM patching info (if setting up from source again)
 ===
 Install dependencies
 * libx11-xcb-dev (for Xlib-xcb.h, required by swallow)
