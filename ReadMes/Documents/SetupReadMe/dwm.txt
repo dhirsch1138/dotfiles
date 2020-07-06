@@ -6,7 +6,8 @@ Install dwm (if installing, else use source from github or from dwm site)
 ===========
 We will be getting the source and building it ourselves, but this gets it on the lightdm menu.
 1) apt install dwm suckless-tools
-2) apt install dpkg-dev
+2) apt install stterm
+3) apt install dpkg-dev
 
 Compile dwm
 ====

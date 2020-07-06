@@ -31,7 +31,7 @@ static char* const autostart[][4] = { /* please replace 2 with maximum number of
     { "nitrogen", "--restore", NULL },
     { "nm-applet", NULL },
     { "redshift-gtk", NULL },
-    { "sh", "-c", "while :; do $HOME/.dwm/dwmstatus.sh -; sleep 30; done", NULL },
+    { "sh", "-c", "while :; do $HOME/.dwm/dwmstatus.sh -; sleep 10; done", NULL },
 };
 
 /* tagging */
