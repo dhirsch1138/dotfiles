@@ -11,7 +11,7 @@
     ];
 
   # enable flakes
-  nix.settings.experimental-features [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -111,11 +111,13 @@
     slurp # screenshot functionality
     udiskie # automagic drive handling (like usb sticks)
     vim # does vimmy things
+    waybar # for sway
     wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
   ];
 
+  # don't enable here, it autostarts but only once
   #waybar for sway <3
-  programs.waybar.enable = true;
+  #  programs.waybar.enable = true;
 
   #firefox, of course
   programs.firefox.enable = true;
