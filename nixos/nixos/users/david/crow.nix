@@ -29,6 +29,8 @@
     lazygit
     lolcat
     lutris
+    qemu
+    quickemu
     stow
     vorta
   ];
