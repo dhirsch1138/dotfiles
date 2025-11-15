@@ -8,6 +8,9 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../shared/steam.nix # games!
+      ../shared/zram.nix # ram based compressed swap
+      ../shared/blocky.nix # local ad block dns  
     ];
 
   # enable flakes
@@ -24,6 +27,9 @@
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
+  # use local ad block dns (blocky)
+  networking.nameservers = [ "127.0.0.1" ];
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -77,17 +83,7 @@
     description = "David Hirsch";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      adwaita-icon-theme
-      banner
-      bat
-      gnome-themes-extra
-      gum
-      imv
-      lolcat
-      lutris
-      stow
-      vorta
-    ];
+   ];
   };
 
   # Allow unfree packages
@@ -119,8 +115,8 @@
   #waybar for sway <3
   #  programs.waybar.enable = true;
 
-  #firefox, of course
-  programs.firefox.enable = true;
+  #firefox, of course moved to home
+  # programs.firefox.enable = true;
 
   # GUI file manager w/ plugins
   programs.thunar = {
@@ -132,14 +128,6 @@
     ];
   };
       
-  #steam for games!
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-    localNetworkGameTransfers.openFirewall = true;
-  };
-
   #gamemode
   #  programs.gamemode.enable = true;
 

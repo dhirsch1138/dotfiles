@@ -17,7 +17,20 @@
     }; 
   };
 
+  programs.firefox.enable = true;
+
   home.packages = with pkgs; [
+    adwaita-icon-theme
+    banner
+    bat
+    gnome-themes-extra
+    gum
+    imv
+    lazygit
+    lolcat
+    lutris
+    stow
+    vorta
   ];
 
   # This value determines the Home Manager release that your
