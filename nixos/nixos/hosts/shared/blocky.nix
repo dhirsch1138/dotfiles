@@ -1,5 +1,15 @@
 { config, pkgs, ... }:
 {
+  
+  #disable network manager's DNS handling as we are using blocky
+  #use localhost as name server now
+  networking = {
+    nameservers = [ "127.0.0.1 "];
+    networkmanager.dns = "none";
+    useDHCP = false;
+    dhcpcd.enable = false;
+  };
+  
   services.blocky = {
     enable = true;
     settings = {
@@ -38,7 +48,7 @@
         minTime = "15m";
         #max was 30
         maxTime = "90m"; 
-        prefetching = true;
+        #prefetching = true;
       };
     };
   };
