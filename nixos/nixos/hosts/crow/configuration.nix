@@ -49,6 +49,8 @@
     wrapperFeatures.gtk = true;
   };
 
+  #trying niri
+  programs.niri.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -91,6 +93,7 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
+    alacritty
     # ffmpeg-full # get multimedia functions (like more hardware acceleration for web)
     (ffmpeg-full.override { withUnfree = true; })
     fuzzel # fancier dmenu
