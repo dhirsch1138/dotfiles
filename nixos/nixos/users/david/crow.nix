@@ -23,6 +23,7 @@
     adwaita-icon-theme
     banner
     bat
+    gh
     gnome-themes-extra
     gum
     imv
