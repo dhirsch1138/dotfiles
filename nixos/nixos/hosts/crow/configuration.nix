@@ -8,7 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../shared/firejail.nix
       ../shared/steam.nix # games!
       ../shared/zram.nix # ram based compressed swap
       ../shared/blocky.nix # local ad block dns  
