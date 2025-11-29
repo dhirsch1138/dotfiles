@@ -28,6 +28,7 @@
     banner
     bat
     gh
+    github-desktop
     gnome-themes-extra
     gum
     imv
