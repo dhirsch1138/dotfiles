@@ -2,7 +2,7 @@
 {
   programs.git = {
     enable = true;
-    userName = "David Hirsch";
-    userEmail = "dhirsch1138@gmail.com";
+    settings.user.name = "David Hirsch";
+    settings.user.email = "dhirsch1138@gmail.com";
   };
 }
