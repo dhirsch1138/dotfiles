@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./cryptDevices.nix
       ../shared/steam.nix # games!
       ../shared/zram.nix # ram based compressed swap
       ../shared/blocky.nix # local ad block dns 
@@ -21,7 +22,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices."luks-ca1ecd12-cbc0-43e3-8236-330a80c0ff01".device = "/dev/disk/by-uuid/ca1ecd12-cbc0-43e3-8236-330a80c0ff01";
+  #boot.initrd.luks.devices."luks-ca1ecd12-cbc0-43e3-8236-330a80c0ff01".device = "/dev/disk/by-uuid/ca1ecd12-cbc0-43e3-8236-330a80c0ff01";
   networking.hostName = "crow"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
