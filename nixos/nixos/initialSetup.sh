@@ -1,4 +1,7 @@
-hs=$(hostname)
+# Get host
+echo "enter host"
+#hs=$(nix shell nixpkgs#gum --command sh -c "gum input --placeholder $(hostname)")
+read hs
 hsPath="./hosts/$hs"
 echo Hello, I am $hs
 echo I need to setup some device specific files before I can do nixxy stuff.
