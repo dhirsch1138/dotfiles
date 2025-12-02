@@ -1,2 +1,0 @@
-nixos/nixos/hosts/**/hardware-configuration.nix
-nixos/nixos/hosts/**/cryptDevices.nix
