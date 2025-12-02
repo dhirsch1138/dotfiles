@@ -50,6 +50,20 @@
            }
        ];
       };
+     tom = nixpkgs.lib.nixosSystem {
+       specialArgs = {
+         inherit system;
+       };
+       modules = [
+         ./hosts/tom/configuration.nix
+         home-manager.nixosModules.home-manager
+           {
+             home-manager.useGlobalPkgs = true;
+             home-manager.useUserPackages = true;
+             home-manager.users.david = ./users/david/tom.nix;
+           }
+        ];
+      };
     };
   };
 }
