@@ -13,6 +13,7 @@
       ../shared/zram.nix # ram based compressed swap
       ../shared/blocky.nix # local ad block dns 
       ../shared/nixSettings.nix # global nix tweaks 
+      ../shared/power.nix # power management stuffs
     ];
 
   # enable flakes
