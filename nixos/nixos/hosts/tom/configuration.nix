@@ -23,6 +23,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  boot.loader.systemd-boot.consoleMode = "auto";
+   
+
   #boot.initrd.luks.devices."luks-ca1ecd12-cbc0-43e3-8236-330a80c0ff01".device = "/dev/disk/by-uuid/ca1ecd12-cbc0-43e3-8236-330a80c0ff01";
   networking.hostName = "tom"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
