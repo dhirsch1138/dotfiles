@@ -39,6 +39,7 @@
     quickemu
     stow
     vorta
+    w3m
   ];
 
   # This value determines the Home Manager release that your
