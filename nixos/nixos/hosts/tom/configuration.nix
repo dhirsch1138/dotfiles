@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./cryptDevices.nix
+      ../shared/touchpad.nix # touchpad specific stuffs
       ../shared/steam.nix # games!
       ../shared/zram.nix # ram based compressed swap
       ../shared/blocky.nix # local ad block dns 
@@ -96,6 +97,7 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
     alacritty
+    auto-cpufreq # power management for laptop
     # ffmpeg-full # get multimedia functions (like more hardware acceleration for web)
     (ffmpeg-full.override { withUnfree = true; })
     fuzzel # fancier dmenu
@@ -147,6 +149,23 @@
   # hardware acceleration
   hardware.graphics.enable = true;
 
+
+  # power/thermal management for laptop
+  services.thermald.enable = true;
+
+  # auto-cpufreq is also under system pkgs
+  services.auto-cpufreq.enable = true;
+  services.auto-cpufreq.settings = {
+    battery = {
+      governor = "powersave";
+      turbo = "never";
+    };
+    charger = {
+      governor = "performance";
+      turbo = "auto";
+    };
+  };
+  
   # enable system wide notifications
   # services.systembus-notify.enable = true;
 
