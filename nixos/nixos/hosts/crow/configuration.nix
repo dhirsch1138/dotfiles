@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./cryptDevices.nix
+      ../shared/plymouth.nix # startup fancy
       ../shared/steam.nix # games!
       ../shared/zswap.nix # ram based compressed swap
       ../shared/blocky.nix # local ad block dns 
