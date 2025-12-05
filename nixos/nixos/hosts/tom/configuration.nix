@@ -9,9 +9,10 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./cryptDevices.nix
+      ../shared/plymouth.nix # fancy startup
       ../shared/touchpad.nix # touchpad specific stuffs
       ../shared/steam.nix # games!
-      ../shared/zram.nix # ram based compressed swap
+      ../shared/zswap.nix # ram based compressed swap
       ../shared/blocky.nix # local ad block dns 
       ../shared/nixSettings.nix # global nix tweaks 
       ../shared/power.nix # power management stuff
@@ -21,7 +22,8 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  # boot.loader.systemd-boot.enable = true;
+  boot.loader.liminie.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.loader.systemd-boot.consoleMode = "auto";
@@ -111,6 +113,7 @@
     networkmanagerapplet # network systray program
     nh # nix helper
     pulseaudio # get volume control programs
+    # sbctl # for limine bootloader secureboot
     slurp # screenshot functionality
     udiskie # automagic drive handling (like usb sticks)
     vim # does vimmy things
