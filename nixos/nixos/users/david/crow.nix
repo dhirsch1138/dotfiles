@@ -21,7 +21,7 @@
 
   
   programs.librewolf.enable = true;
-  programs.firefox.enable = true;
+  #programs.firefox.enable = true;
 
   home.packages = with pkgs; [
     adwaita-icon-theme

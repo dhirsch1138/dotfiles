@@ -20,7 +20,8 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  #boot.loader.systemd-boot.enable = true;
+  boot.loader.limine.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   #boot.initrd.luks.devices."luks-ca1ecd12-cbc0-43e3-8236-330a80c0ff01".device = "/dev/disk/by-uuid/ca1ecd12-cbc0-43e3-8236-330a80c0ff01";
@@ -107,6 +108,7 @@
     networkmanagerapplet # network systray program
     nh # nix helper
     pulseaudio # get volume control programs
+    # sbctl # for limine bootloader secureboot
     slurp # screenshot functionality
     udiskie # automagic drive handling (like usb sticks)
     vim # does vimmy things
