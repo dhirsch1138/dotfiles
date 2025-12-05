@@ -10,7 +10,7 @@
       ./hardware-configuration.nix
       ./cryptDevices.nix
       ../shared/steam.nix # games!
-      ../shared/zram.nix # ram based compressed swap
+      ../shared/zswap.nix # ram based compressed swap
       ../shared/blocky.nix # local ad block dns 
       ../shared/nixSettings.nix # global nix tweaks 
       ../shared/power.nix # power management stuffs
