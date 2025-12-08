@@ -14,8 +14,8 @@
     enable = true;
     shellAliases = {
       btw = "echo i use nixos, btw";
-      nix-update = "pwd=$(pwd) && cd ~/nixos/ && ./update.sh && cd $pwd";
-      nix-switch = "pwd=$(pwd) && cd ~/nixos/ && ./switch.sh && cd $pwd";
+      nix-update = "pwd=$(pwd) && cd ~/nixos/scripts && ./nix-update.sh && cd $pwd";
+      nix-switch = "pwd=$(pwd) && cd ~/nixos/scripts && ./nix-switch.sh && cd $pwd";
     }; 
   };
 

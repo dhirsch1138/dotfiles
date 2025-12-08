@@ -14,14 +14,14 @@
     enable = true;
     shellAliases = {
       btw = "echo i use nixos, btw";
-      nix-update = "pwd=$(pwd) && cd ~/nixos/ && ./update.sh && cd $pwd";
-      nix-switch = "pwd=$(pwd) && cd ~/nixos/ && ./switch.sh && cd $pwd";
+      nix-update = "pwd=$(pwd) && cd ~/nixos/scripts && ./nix-update.sh && cd $pwd";
+      nix-switch = "pwd=$(pwd) && cd ~/nixos/scripts && ./nix-switch.sh && cd $pwd";
     }; 
   };
 
   
   programs.librewolf.enable = true;
-  # programs.firefox.enable = true;
+  #programs.firefox.enable = true;
 
   home.packages = with pkgs; [
     adwaita-icon-theme
@@ -39,6 +39,7 @@
     quickemu
     stow
     vorta
+    w3m
   ];
 
   # This value determines the Home Manager release that your

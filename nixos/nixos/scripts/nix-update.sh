@@ -1,5 +1,6 @@
 hs=$(hostname)
 nix shell nixpkgs#banner nixpkgs#lolcat --command sh -c "banner NIX Update! | lolcat"
+cd ..
 echo updating flake.nix in $(pwd)
 nix shell nixpkgs#gum --command sh -c "gum spin --spinner dot --title \"Waiting five seconds... (control+c to abort)\" -- sleep 5"
 echo -----------
