@@ -35,6 +35,7 @@
     lazygit
     lolcat
     lutris
+    notepad-next
     qemu
     quickemu
     stow
