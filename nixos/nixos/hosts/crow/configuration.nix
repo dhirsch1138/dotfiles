@@ -11,6 +11,7 @@
       ./cryptDevices.nix
       ../shared/plymouth.nix # startup fancy
       ../shared/steam.nix # games!
+      ../shared/thunar.nix # gui file manager 
       ../shared/zswap.nix # ram based compressed swap
       ../shared/blocky.nix # local ad block dns 
       ../shared/nixSettings.nix # global nix tweaks 
@@ -116,27 +117,7 @@
     waybar # for sway
     wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
   ];
-
-  # don't enable here, it autostarts but only once
-  #waybar for sway <3
-  #  programs.waybar.enable = true;
-
-  #firefox, of course moved to home
-  # programs.firefox.enable = true;
-
-  # GUI file manager w/ plugins
-  programs.thunar = {
-    enable = true;
-    plugins = with pkgs.xfce; [
-      thunar-archive-plugin
-      thunar-vcs-plugin
-      thunar-volman
-    ];
-  };
       
-  #gamemode
-  #  programs.gamemode.enable = true;
-
   # udisks to help manage removable media
   #   udiskie uses this to provide automount <3
   services.udisks2.enable = true;
