@@ -11,6 +11,7 @@
       ./cryptDevices.nix
       ../shared/plymouth.nix # startup fancy
       ../shared/steam.nix # games!
+	  ../shared/fonts.nix # fonts 
       ../shared/thunar.nix # gui file manager 
       ../shared/zswap.nix # ram based compressed swap
       ../shared/blocky.nix # local ad block dns 
@@ -135,23 +136,6 @@
   # enable system wide notifications
   # services.systembus-notify.enable = true;
 
-  #fonts.packages = with pkgs; [ nerd-fonts.noto ];
-  
-  fonts = {
-    packages = with pkgs; [
-      noto-fonts
-      noto-fonts-cjk-sans
-      noto-fonts-color-emoji
-      font-awesome
-      source-han-sans
-      source-han-serif
-    ];
-    fontconfig.defaultFonts = {
-      serif = [ "Noto Serif" "Source Han Serif" ];
-      sansSerif = [ "Noto Sans" "Source Han Sans" ];
-    };
-  };
- 
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
