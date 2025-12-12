@@ -23,7 +23,7 @@
 
   # Bootloader.
   # boot.loader.systemd-boot.enable = true;
-  boot.loader.liminie.enable = true;
+  boot.loader.limine.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.loader.systemd-boot.consoleMode = "auto";
