@@ -8,38 +8,14 @@
 
   imports = [
       ./david_git.nix
+      ./bash.nix
+	  ./programs_all.nix	  
   ];
 
-  programs.bash = {
-    enable = true;
-    shellAliases = {
-      btw = "echo i use nixos, btw";
-      nix-update = "pwd=$(pwd) && cd ~/nixos/scripts && ./nix-update.sh && cd $pwd";
-      nix-switch = "pwd=$(pwd) && cd ~/nixos/scripts && ./nix-switch.sh && cd $pwd";
-    }; 
-  };
-
-  
   programs.librewolf.enable = true;
   #programs.firefox.enable = true;
 
   home.packages = with pkgs; [
-    adwaita-icon-theme
-    banner
-    bat
-    gh
-    github-desktop
-    gnome-themes-extra
-    gum
-    imv
-    lazygit
-    lolcat
-    lutris
-    qemu
-    quickemu
-    stow
-    vorta
-    w3m
   ];
 
   # This value determines the Home Manager release that your
