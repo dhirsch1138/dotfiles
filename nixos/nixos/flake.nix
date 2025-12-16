@@ -3,11 +3,11 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.11";
-    #nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";  # Follows stable nixpkgs by default
     };
+	#nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     #home-manager.url = "github:nix-community/home-manager";
     #home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -19,7 +19,7 @@
   in
   {
     nixosConfigurations = {
-      helios = nixpkgs.lib.nixosSystem {
+	  helios = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit system;
         };
@@ -36,11 +36,11 @@
           }
         ];
       };
-     crow = nixpkgs.lib.nixosSystem {
-       specialArgs = {
+	  crow = nixpkgs.lib.nixosSystem {
+		specialArgs = {
          inherit system;
        };
-       modules = [
+        modules = [
          ./hosts/crow/configuration.nix
          home-manager.nixosModules.home-manager
            {
@@ -50,11 +50,11 @@
            }
        ];
       };
-     tom = nixpkgs.lib.nixosSystem {
-       specialArgs = {
+      tom = nixpkgs.lib.nixosSystem {
+        specialArgs = {
          inherit system;
        };
-       modules = [
+        modules = [
          ./hosts/tom/configuration.nix
          home-manager.nixosModules.home-manager
            {

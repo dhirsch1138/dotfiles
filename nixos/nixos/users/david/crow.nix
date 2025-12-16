@@ -8,13 +8,11 @@
 
   imports = [
       ./david_git.nix
-	  ./bash.nix
-	  ./programs_all.nix
+      ./bash.nix
+      ./browsers.nix
+      ./programs_all.nix
   ];
   
-  programs.librewolf.enable = true;
-  #programs.firefox.enable = true;
-
   home.packages = with pkgs; [
   ];
 
